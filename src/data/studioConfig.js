@@ -15,7 +15,6 @@ import {
   PartyPopper,
   FileText,
   Printer,
-  Camera,
 } from "lucide-react";
 
 // ---- Basic studio details --------------------------------------------------
@@ -100,14 +99,6 @@ export const SERVICES = [
     nameEn: "Function Photography",
     descTa: "பிறந்தநாள், நிச்சயதார்த்தம், குடும்ப விழாக்கள்.",
     descEn: "Birthdays, engagements and family functions.",
-  },
-  {
-    id: "photoshooting",
-    icon: Camera,
-    nameTa: "போட்டோஷூட்",
-    nameEn: "Photoshooting",
-    descTa: "மாடலிங், வெளிப்புற மற்றும் உள்ளரங்க போட்டோஷூட் சேவைகள்.",
-    descEn: "Modeling, outdoor, and indoor photoshooting services.",
   },
   {
     id: "patta-chitta",
