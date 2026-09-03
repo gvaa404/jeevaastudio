@@ -1,3 +1,9 @@
+# Package manager locks
+bun.lock
+bun.lockb
+yarn.lock
+pnpm-lock.yaml
+
 # Logs
 logs
 *.log
