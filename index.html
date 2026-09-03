@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080808" />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("studio-theme");
+          var dark = saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+
+    <title>Jeevaa Studio | Photo, Print & Photography Services</title>
+    <meta name="description" content="Jeevaa Studio - Professional photography, passport photos, photo printing, albums, frames, marriage & function photography, Patta/Chitta and printout services. Call or WhatsApp +91 99439 79798." />
+    <meta name="robots" content="index, follow" />
+    
+    <meta property="og:type" content="business.business" />
+    <meta property="og:site_name" content="Jeevaa Studio" />
+    <meta property="og:title" content="Jeevaa Studio | Photo, Print & Photography Services" />
+    <meta property="og:description" content="Professional photography, passport photos, photo printing, albums, frames, marriage & function photography, Patta/Chitta and printout services." />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="ta_IN" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "PhotoStudio",
+        "name": "Jeevaa Studio",
+        "alternateName": "ஜீவா ஸ்டூடியோ",
+        "image": "/favicon.svg",
+        "telephone": "+919943979798",
+        "priceRange": "₹₹",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 9.8082461,
+          "longitude": 77.6741179
+        },
+        "hasMap": "https://maps.app.goo.gl/F8MTPmqaU8VsXeXB8",
+        "sameAs": ["https://maps.app.goo.gl/F8MTPmqaU8VsXeXB8"]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
