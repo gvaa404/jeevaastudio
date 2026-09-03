@@ -30,7 +30,7 @@ export default function Footer() {
               {t.footer.quickLinks}
             </h3>
             <ul className="mt-4 space-y-3">
-              {["services", "photography", "gallery", "about"].map((key) => (
+              {["services", "photography", "about"].map((key) => (
                 <li key={key}>
                   <a href={`#${key}`} className="text-sm text-content-muted hover:text-brand transition-colors">
                     {t.nav[key]}

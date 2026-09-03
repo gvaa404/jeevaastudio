@@ -9,7 +9,6 @@ import { buildWhatsAppUrl } from "../utils/whatsapp";
 const NAV_ITEMS = [
   { href: "#home", key: "home" },
   { href: "#services", key: "services" },
-  { href: "#gallery", key: "gallery" },
   { href: "#photography", key: "photography" },
   { href: "#about", key: "about" },
   { href: "#contact", key: "contact" },

@@ -7,7 +7,6 @@ import Services from "./components/Services";
 import VisualBreak from "./components/VisualBreak";
 import PhotoPrinting from "./components/PhotoPrinting";
 import MarriagePhotography from "./components/MarriagePhotography";
-import Gallery from "./components/Gallery";
 import EverydayServices from "./components/EverydayServices";
 import About from "./components/About";
 import EnquiryForm from "./components/EnquiryForm";
@@ -28,7 +27,6 @@ export default function App() {
             <VisualBreak />
             <PhotoPrinting />
             <MarriagePhotography />
-            <Gallery />
             <EverydayServices />
             <About />
             <EnquiryForm />

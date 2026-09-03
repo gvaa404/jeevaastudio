@@ -44,14 +44,14 @@ export default function PhotoPrinting() {
               </a>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {printItems.map((item, index) => {
                 const Icon = item.icon;
                 return (
                   <div 
                     key={index} 
                     className={`flex items-center gap-4 rounded-2xl border border-border-subtle bg-surface-base p-5 transition-colors hover:border-brand/30 ${
-                      index === 4 ? "col-span-2 sm:col-span-1 lg:col-span-2" : ""
+                      index === 4 ? "sm:col-span-2" : ""
                     }`}
                   >
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-surface-alt">

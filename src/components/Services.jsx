@@ -5,24 +5,22 @@ import { buildWhatsAppUrl } from "../utils/whatsapp";
 export default function Services() {
   const { t, lang } = useLanguage();
   
-  // Exclude everyday services like Patta/Chitta, Xerox etc. from this primary grid if we want.
-  // The prompt asks to keep 4 cards per row large. Let's just map all services or filter.
-  // The prompt said: 01 Passport Photo, 02 6x4 Photo Print, 03 Photo Frame, 04 Photo Album, 05 Marriage Photography, 06 Function Photography, 07 Patta / Chitta, 08 Printout / Xerox / Scan
   return (
-    <section id="services" className="bg-surface-base py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-4xl font-bold tracking-tight text-content-main sm:text-5xl">
-              {t.services.heading}
-            </h2>
-            <p className="mt-4 text-lg text-content-muted">
-              {t.services.subheading}
-            </p>
-          </div>
+    <section id="services" className="bg-surface-base py-24 sm:py-32 relative overflow-hidden">
+      {/* Subtle background element */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand/5 via-transparent to-transparent opacity-50 pointer-events-none" />
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="font-display text-4xl font-bold tracking-tight text-content-main sm:text-5xl">
+            {t.services.heading}
+          </h2>
+          <p className="mt-6 text-lg text-content-muted leading-relaxed">
+            {t.services.subheading}
+          </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {SERVICES.map((service, index) => {
             const Icon = service.icon;
             const name = lang === "ta" ? service.nameTa : service.nameEn;
@@ -34,16 +32,23 @@ export default function Services() {
             const numberString = String(index + 1).padStart(2, "0");
 
             return (
-              <div
+              <a
                 key={service.id}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-border-subtle bg-surface-alt p-8 transition-all hover:-translate-y-1 hover:border-brand/50 hover:shadow-[0_0_30px_-10px_rgba(198,161,91,0.2)]"
+                href={buildWhatsAppUrl(msg)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-surface-alt p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/5 border border-transparent hover:border-brand/20"
               >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <Icon size={32} strokeWidth={1.5} className="text-brand transition-transform group-hover:scale-110" aria-hidden="true" />
-                    <span className="font-display text-2xl font-bold text-content-muted/60">{numberString}</span>
+                {/* Number Watermark */}
+                <span className="absolute -bottom-6 -right-4 font-display text-[8rem] font-bold text-content-muted/5 transition-transform duration-500 group-hover:scale-110 group-hover:text-brand/5 pointer-events-none select-none">
+                  {numberString}
+                </span>
+
+                <div className="relative z-10">
+                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-surface-base text-brand shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
+                    <Icon size={28} strokeWidth={1.5} aria-hidden="true" />
                   </div>
-                  <h3 className="mt-8 font-display text-xl font-semibold text-content-main">
+                  <h3 className="mt-8 font-display text-xl font-semibold text-content-main group-hover:text-brand transition-colors">
                     {name}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-content-muted">
@@ -51,16 +56,11 @@ export default function Services() {
                   </p>
                 </div>
                 
-                <a
-                  href={buildWhatsAppUrl(msg)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-8 inline-flex items-center text-sm font-semibold tracking-wide text-brand transition-colors hover:text-brand"
-                >
+                <div className="relative z-10 mt-8 flex items-center text-sm font-semibold tracking-wide text-brand opacity-0 transition-all duration-300 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0">
                   {t.services.enquire}
                   <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-                </a>
-              </div>
+                </div>
+              </a>
             );
           })}
         </div>
@@ -68,3 +68,4 @@ export default function Services() {
     </section>
   );
 }
+

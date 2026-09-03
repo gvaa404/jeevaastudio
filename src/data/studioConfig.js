@@ -15,6 +15,7 @@ import {
   PartyPopper,
   FileText,
   Printer,
+  Camera,
 } from "lucide-react";
 
 // ---- Basic studio details --------------------------------------------------
@@ -31,11 +32,9 @@ export const PHONE_DISPLAY = "+91 99437 99798";
 // WhatsApp number in international format WITHOUT "+" or spaces (used in wa.me links)
 export const WHATSAPP_NUMBER = "919943799798";
 
-// TODO: Confirm the exact door number / street name and update below —
-// only the general area could be verified automatically from the map pin.
 export const ADDRESS = {
-  ta: "ஜீவா ஸ்டூடியோ, தமிழ்நாடு",
-  en: "Jeevaa Studio, Tamil Nadu",
+  ta: "ஜீவா ஸ்டூடியோ, T.கிருஷ்ணாபுரம் விலக்கு, T.பாறைப்பட்டி, M.கல்லுப்பட்டி மெயின் ரோடு, எழுமலை, தமிழ்நாடு 625535",
+  en: "Jeevaa studio, T.Krishnapuram vilaku, T.Paraipatti, M.Kallupatti Main Rd, Elumalai, Tamil Nadu 625535",
 };
 
 // Studio's real Google Maps share link (opens directions in Google Maps).
@@ -103,6 +102,14 @@ export const SERVICES = [
     descEn: "Birthdays, engagements and family functions.",
   },
   {
+    id: "photoshooting",
+    icon: Camera,
+    nameTa: "போட்டோஷூட்",
+    nameEn: "Photoshooting",
+    descTa: "மாடலிங், வெளிப்புற மற்றும் உள்ளரங்க போட்டோஷூட் சேவைகள்.",
+    descEn: "Modeling, outdoor, and indoor photoshooting services.",
+  },
+  {
     id: "patta-chitta",
     icon: FileText,
     nameTa: "பட்டா / சிட்டா சேவை",
@@ -137,15 +144,9 @@ export const GALLERY_IMAGES = [
   { id: 2, category: "marriage", src: "/images/marriage2.jpeg", altTa: "திருமண சடங்கு", altEn: "Wedding ritual" },
   { id: 3, category: "functions", src: "/images/functions.jpeg", altTa: "பிறந்தநாள் விழா", altEn: "Birthday function" },
   { id: 4, category: "functions", src: "/images/functions2.jpeg", altTa: "குடும்ப விழா", altEn: "Family function" },
-  { id: 5, category: "album", src: "https://images.unsplash.com/photo-1611095973763-414019e72400?w=600&h=600&fit=crop", altTa: "புகைப்பட ஆல்பம்", altEn: "Photo album" },
-  { id: 6, category: "album", src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=600&fit=crop", altTa: "ஆல்பம் பக்கங்கள்", altEn: "Album pages" },
-  { id: 7, category: "frame", src: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&h=600&fit=crop", altTa: "புகைப்பட ஃப்ரேம்", altEn: "Photo frame" },
-  { id: 8, category: "frame", src: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=600&h=600&fit=crop", altTa: "ஃப்ரேம் மாதிரிகள்", altEn: "Frame samples" },
-  { id: 9, category: "print", src: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&h=600&fit=crop", altTa: "புகைப்பட பிரிண்ட்", altEn: "Photo print" },
-  { id: 10, category: "print", src: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=600&fit=crop", altTa: "பிரிண்ட் மாதிரிகள்", altEn: "Print samples" },
 ];
 
 // Hero and section images — replace with your own studio photos any time.
 export const HERO_IMAGE = "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=900&h=1100&fit=crop";
-export const PHOTOGRAPHY_IMAGE_1 = "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&h=900&fit=crop";
-export const PHOTOGRAPHY_IMAGE_2 = "https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?w=800&h=900&fit=crop";
+export const PHOTOGRAPHY_IMAGE_1 = "/images/marriage.jpeg";
+export const PHOTOGRAPHY_IMAGE_2 = "/images/functions.jpeg";
